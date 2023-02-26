@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "install-all": "npm i && cd back && npm i && cd .. && cd front && npm i"
+    "install-all": "npm i && cd back && npm i && cd .. && cd front && npm i",
+    "types": "cd back && npm run types"
   },
   "repository": {
     "type": "git",
