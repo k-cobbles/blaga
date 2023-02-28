@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useContext } from "react";
 import { GlobalContext } from "../pages/_app";
 import { getStrapiMedia } from "../lib/media";
-import { SharedSeo } from '@/types/schemas';
+import { SharedSeo } from 'types/schemas';
 
 type SeoProps = {
   seo: SharedSeo
@@ -12,8 +12,8 @@ type SeoProps = {
 const Seo = ({ seo }: SeoProps) => {
   const { defaultSeo, siteName } = useContext(GlobalContext);
   const seoWithDefaults = {
-    ...defaultSeo,
-    ...seo,
+    // ...defaultSeo,
+    ...seo.attributes,
   };
   const fullSeo = {
     ...seoWithDefaults,

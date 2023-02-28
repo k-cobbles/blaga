@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import NextImage from './image'
-import { ApiArticleArticle } from '@/types/schemas'
+import { ApiArticleArticle } from 'types/schemas'
 
 type CardProps = {
   article: ApiArticleArticle;
@@ -31,3 +31,5 @@ const Card = ({ article }: CardProps) => {
     </Link>
   )
 }
+
+export default Card;

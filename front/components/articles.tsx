@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card";
-import { ApiArticleArticle } from '@/types/schemas';
+import { ApiArticleArticle } from 'types/schemas';
 
 type ArticlesProps = {
   articles: ApiArticleArticle[]

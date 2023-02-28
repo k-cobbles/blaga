@@ -1,4 +1,4 @@
-import { ApiCategoryCategory } from '@/types/schemas';
+import { ApiCategoryCategory } from 'types/schemas';
 
 export interface Category extends ApiCategoryCategory{
   id: number;

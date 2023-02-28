@@ -770,6 +770,40 @@ export interface ApiGlobalGlobal extends SingleTypeSchema {
   };
 }
 
+export interface ApiHomeHome extends SingleTypeSchema {
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero: ComponentAttribute<'shared.hero'>;
+    seo: ComponentAttribute<'shared.seo'>;
+    createdAt: DateTimeAttribute;
+    updatedAt: DateTimeAttribute;
+    publishedAt: DateTimeAttribute;
+    createdBy: RelationAttribute<'api::home.home', 'oneToOne', 'admin::user'> &
+      PrivateAttribute;
+    updatedBy: RelationAttribute<'api::home.home', 'oneToOne', 'admin::user'> &
+      PrivateAttribute;
+  };
+}
+
+export interface SharedHero extends ComponentSchema {
+  info: {
+    displayName: 'Hero';
+    description: '';
+  };
+  attributes: {
+    title: TextAttribute;
+    carousel: ComponentAttribute<'shared.slider'>;
+  };
+}
+
 export interface SharedMedia extends ComponentSchema {
   info: {
     displayName: 'Media';
@@ -846,6 +880,8 @@ declare global {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::home.home': ApiHomeHome;
+      'shared.hero': SharedHero;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
